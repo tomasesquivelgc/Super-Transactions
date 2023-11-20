@@ -18,23 +18,8 @@
       <%= value %>
     </div>
   <% end %>
-  <div class="flex h-screen relative">
-  <div 
-  data-transition-enter="transition ease-out duration-100"
-  data-transition-enter-start="transform opacity-0 scale-95"
-  data-transition-enter-end="transform opacity-100 scale-100"
-  data-transition-leave="transition ease-in duration-75"
-  data-transition-leave-start="transform opacity-100 scale-100"
-  data-transition-leave-end="transform opacity-0 scale-95"
-class="sm:hidden hidden bg-gray-800" id="mobile-menu">
-  <div class="space-y-1 px-2 pb-3 pt-2">
-    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-    <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
-    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
-  </div>
-</div>
+  <div class="flex relative">
+    <%= render "layouts/mobile_menu" %>
       <%= yield %>
   </div>
   </body>
