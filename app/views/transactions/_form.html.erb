@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
   <div class="my-5">
     <%= form.label :name %>
     <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
@@ -22,8 +24,8 @@
   </div>
 
   <div  class="field">
-  <%= form.label :category_id %>
-  <%= form.select :category_id, options_for_select((@categories || []).map { |p| [p.name, p.id] }), include_blank: 'Choose the categories' %>
+  <%= form.label :category %>
+  <%= form.select :category, options_for_select((@categories || []).map { |p| [p.name, p.id] }), include_blank: 'Choose the categories' %>
 </div>
 
   <div class="inline">
