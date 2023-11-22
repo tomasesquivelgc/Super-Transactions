@@ -9,11 +9,11 @@
     <p class="p-3">$45.00</p>
   </div>
 
-  <div class="bg-slate-400 p-3">
+  <div class="bg-slate-400 p-1">
    <% @categories.each do |category| %>
-    <div id="<%= dom_id category %>" class="flex m-3 bg-white" >
+    <div id="<%= dom_id category %>" class="flex mx-1 my-3 bg-white" >
       <img src="<%= category.image %>" class="p-5 h-32"></img>
-      <div class="w-full">
+      <div class="w-full divide-y">
         <div class="flex justify-between">
           <p class="p-5">
             <%= category.name %>
