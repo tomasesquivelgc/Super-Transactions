@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   has_many :categorizations
-  has_many :categorized_transactions, through: :categorizations
+  has_many :transactions, through: :categorizations
 
   validates :name, presence: true
   validates :image, presence: true
