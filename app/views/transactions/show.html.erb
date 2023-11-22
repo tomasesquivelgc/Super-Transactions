@@ -5,7 +5,10 @@
     <% end %>
 
     <%= render @transaction %>
-    <%= @transaction.categories %>
+    <%= @transaction.category_ids %>
+
+
+
 
     <%= link_to "Edit this transaction", edit_transaction_path(@transaction), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
