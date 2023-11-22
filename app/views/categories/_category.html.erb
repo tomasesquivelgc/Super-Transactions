@@ -1,13 +1,26 @@
-<div class="w-full" id="<%= dom_id category %>>
+<div id="<%= dom_id category %>" class="mx-1 my-3 bg-white divide-y" >
 
-  <div class="flex">
+  <div class="w-full flex">
     <img src="<%= category.image %>" class="p-5 h-32"></img>
-
-    <p class="my-5">
+    <p class="p-5">
       <%= category.name %>
     </p>
   </div>
 
-  <%= category.categorizations.first.transaction_id %>
+  <div class="w-full flex justify-between">
+  <p class="p-5">TOTAL PAYMENT</p>
+  <p class="p-5">$14</p>
+  </div>
+
+  <div class="w-full">
+  <% category.categorizations.each do |categorization| %> 
+    <div class="flex justify-between">
+      <p class="p-5">
+        <%= categorization.categorized_transaction.name %>
+      </p>
+      <p class="p-5">$<%= categorization.categorized_transaction.amount %></p>
+    </div>
+  <% end %>
+  </div>
 
 </div>
