@@ -1,1 +1,35 @@
-<p class="fixed">Home</p>
+<div class="w-screen">
+  <div class="flex justify-center items-center bg-blue-800 text-white">
+    <p class="p-3">Most recent</p>
+    <p class="p-3">Most ancient</p>
+  </div>
+
+  <div class="flex justify-between">
+    <p class="p-3 text-slate-400">Gift credit</p>
+    <p class="p-3">$45.00</p>
+  </div>
+
+  <div class="bg-slate-400 p-3">
+   <% @categories.each do |category| %>
+    <div id="<%= dom_id category %>" class="flex m-3 bg-white" >
+      <img src="<%= category.image %>" class="p-5 h-32"></img>
+      <div class="w-full">
+        <div class="flex justify-between">
+          <p class="p-5">
+            <%= category.name %>
+          </p>
+          <p class="p-5">$<%= category.categorizations.first.transaction_id %></p>
+        </div>
+        <div>
+          <p class="p-5">Texto</p>
+        </div>
+      </div>
+    </div>
+   <% end %>
+  </div>
+
+  <div class="w-full bg-green-800 text-white flex justify-center items-center">
+   <button class="bg-green-800 p-5 m-5 border w-full h-full">Add new category</button>
+   </div>
+
+</div>
