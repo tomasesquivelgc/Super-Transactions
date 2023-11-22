@@ -14,7 +14,7 @@ module.exports = {
       },
       colors: {
         customGray: {
-          100: '#f1f1f1',
+          100: '#f5f6f8',
           300: '#989da3',
           500: '#86898e',
           700: '#545c67',
@@ -23,6 +23,7 @@ module.exports = {
 
         customGreen: '#5fb523',
         customBlue: '#3778c2',
+        customBlueDark: '#2c609d',
       },
     },
   },
