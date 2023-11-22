@@ -34,7 +34,9 @@
     </div>
 
     <div class="w-full bg-green-800 text-white flex justify-center items-center">
-    <button class="bg-green-800 p-5 m-5 border w-full h-full">Add new category</button>
+    <%= link_to new_category_path, class: "bg-green-800 p-5 m-5 border w-full h-full text-center" do %>
+      Add new category
+    <% end %>
     </div>
 
   </div>
