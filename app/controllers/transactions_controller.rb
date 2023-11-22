@@ -44,7 +44,7 @@ class TransactionsController < ApplicationController
     # Clear existing categorizations and create new ones
     transaction.categorizations.destroy_all
     category_ids.each do |category_id|
-      transaction.categorizations.create(category_id: category_id)
+      transaction.categorizations.create(category_id:)
     end
   end
 
@@ -57,6 +57,4 @@ class TransactionsController < ApplicationController
   def transaction_params
     params.require(:transaction).permit(:name, :amount, { category_ids: [] }, :user_id)
   end
-  
-  
 end
