@@ -1,3 +1,5 @@
-<p>splash_screen</p>
-<%= link_to "Sign in", new_user_session_path %>
-<%= link_to "Sign up", new_user_registration_path %>
+<div class="w-screen h-screen bg-customGray-100 flex flex-col justify-center text-center">
+<h1 class="text-4xl font-extrabold italic my-40">SuperTransactions</h1>
+<%= link_to "LOG IN", new_user_session_path, class: "bg-customBlue w-60 text-white mx-auto p-3" %>
+<%= link_to "SIGN UP", new_user_registration_path, class: "w-60 text-customGray-500 mx-auto p-3" %>
+</div>
