@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: %i[show edit update destroy]
+  helper_method :calculate_total_amount
 
   # GET /categories or /categories.json
   def index
@@ -56,6 +57,10 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+  def calculate_total_amount(category)
+    category.categorizations.map { |categorization| categorization.categorized_transaction.amount.to_f }.sum
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_category

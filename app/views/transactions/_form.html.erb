@@ -1,4 +1,25 @@
-<%= form_with(model: transaction, class: "contents") do |form| %>
+<%= form_with(model: transaction, html: { class: "bg-customGray-100 h-screen" }) do |form| %>
+  <header>
+    <nav class="bg-gradient-to-b from-customBlue to-customBlueDark">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between big">
+
+          <%= link_to root_path, class: 'block' do %>
+            <%= image_tag('icons/arrow_left.svg', class: 'w-6 h-6 sm:hidden') %>
+          <% end %>
+
+          <div class="absolute inset-y-0 left-1/2 transform -translate-x-1/2 flex items-center justify-center sm:hidden">
+            <span class="text-white text-lg font-medium">NEW TRANSACTION</span>
+          </div>
+
+          <div class="actions text-white">
+            <%= form.submit "Next" %>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </header>
   <% if transaction.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
@@ -13,27 +34,27 @@
 
   <%= form.hidden_field :user_id, value: current_user.id %>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="bg-white mt-5 divide-y border-2">
+
+    <div>
+      <%= form.text_field :name, class: "w-full border-none p-3", placeholder: "Name" %>
+    </div>
+
+    <div>
+      <%= form.number_field :amount, class: "w-full border-none p-3", placeholder: "Amount" %>
+    </div>
+
+    <div class="p-3 flex flex-col">
+    <%= form.label :categories, "Categories", class: "text-center" %>
+    <div">
+    <% @categories.each do |category| %>
+      <label class="p-2">
+        <%= check_box_tag 'transaction[category_ids][]', category.id %>
+        <%= category.name %>
+      </label>
+    <% end %>
+    </div>
+    </div>
   </div>
 
-  <div class="my-5">
-    <%= form.label :amount %>
-    <%= form.number_field :amount, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-  <%= form.label :categories, "Categories" %>
-  <% @categories.each do |category| %>
-    <label>
-      <%= check_box_tag 'transaction[category_ids][]', category.id %>
-      <%= category.name %>
-    </label>
-  <% end %>
-</div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
 <% end %>
