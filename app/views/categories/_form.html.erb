@@ -1,4 +1,25 @@
-<%= form_with(model: category, class: "contents") do |form| %>
+<%= form_with(model: category, html: { class: "bg-customGray-100 h-screen" }) do |form| %>
+  <header>
+    <nav class="bg-gradient-to-b from-customBlue to-customBlueDark">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between big">
+
+          <%= link_to root_path, class: 'block' do %>
+            <%= image_tag('icons/arrow_left.svg', class: 'w-6 h-6 sm:hidden') %>
+          <% end %>
+
+          <div class="absolute inset-y-0 left-1/2 transform -translate-x-1/2 flex items-center justify-center sm:hidden">
+            <span class="text-white text-lg font-medium">NEW CATEGORY</span>
+          </div>
+
+          <div class="actions text-white">
+            <%= form.submit "Next" %>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+  </header>
   <% if category.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
@@ -11,17 +32,13 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="bg-white mt-5 divide-y border-2">
+  <div class="field">
+    <%= form.text_field :name, class: "w-full border-none p-3", placeholder: "name" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :image %>
-    <%= form.text_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="field">
+    <%= form.text_field :image, class: "w-full border-none p-3", placeholder: "image url" %>
   </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>
