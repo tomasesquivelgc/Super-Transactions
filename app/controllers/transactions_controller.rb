@@ -25,7 +25,7 @@ class TransactionsController < ApplicationController
     respond_to do |format|
       if @transaction.save
         create_or_update_categorizations(@transaction, transaction_params[:category_ids])
-        format.html { redirect_to transaction_url(@transaction), notice: 'Transaction was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @transaction }
       else
         format.html { render :new, status: :unprocessable_entity }
