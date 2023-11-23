@@ -9,16 +9,19 @@
 
   <div class="w-full flex justify-between">
   <p class="p-5">TOTAL PAYMENT</p>
-  <p class="p-5">$<%= calculate_total_amount(category) %></p>
+  <p class="p-5 text-customGray-900">$<%= calculate_total_amount(category) %></p>
   </div>
 
   <div class="w-full">
-  <% category.categorizations.each do |categorization| %> 
+  <% category.categorizations.order(created_at: :desc).each do |categorization| %> 
+    <div class="py-4">
     <div class="flex justify-between">
-      <p class="p-5">
+      <p class="px-5">
         <%= categorization.categorized_transaction.name %>
       </p>
-      <p class="p-5">$<%= categorization.categorized_transaction.amount %></p>
+      <p class="px-5">$<%= categorization.categorized_transaction.amount %></p>
+    </div>
+    <p class="px-5"><%= categorization.categorized_transaction.created_at.strftime('%d %b %Y') %></p>
     </div>
   <% end %>
   </div>
