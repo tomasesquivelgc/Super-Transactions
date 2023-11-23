@@ -22,7 +22,7 @@
               <p class="p-5">
                 <%= category.name %>
               </p>
-              <p class="p-5">$<%= category.categorizations.first.transaction_id %></p>
+              <p class="p-5">$<%= calculate_total_amount(category) %></p>
             </div>
             <div>
               <p class="p-5">Texto</p>
