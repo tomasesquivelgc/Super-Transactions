@@ -2,11 +2,6 @@ class TransactionsController < ApplicationController
   before_action :set_transaction, only: %i[show]
   before_action :set_categories, only: %i[new create]
 
-  # GET /transactions or /transactions.json
-  def index
-    @transactions = Transaction.all
-  end
-
   # GET /transactions/1 or /transactions/1.json
   def show
     @categorizations = Categorization.all
