@@ -1,10 +1,10 @@
-<%= form_with(model: transaction, html: { class: "bg-customGray-100 h-screen" }) do |form| %>
+<%= form_with(model: [@category, transaction], html: { class: "bg-customGray-100 h-screen" }) do |form| %>
   <header>
     <nav class="bg-gradient-to-b from-customBlue to-customBlueDark">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between big">
 
-          <%= link_to root_path, class: 'block' do %>
+          <%= link_to category_path(@category), class: 'block' do %>
             <%= image_tag('icons/arrow_left.svg', class: 'w-6 h-6 sm:hidden') %>
           <% end %>
 

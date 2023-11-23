@@ -1,4 +1,5 @@
 class TransactionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_transaction, only: %i[show]
   before_action :set_categories, only: %i[new create]
 
@@ -9,6 +10,7 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   def new
+    @category = Category.find(params[:category_id])
     @transaction = Transaction.new
     @categorizations = Categorization.all
   end
