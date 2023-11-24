@@ -1,11 +1,7 @@
 class TransactionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_transaction, only: %i[show]
   before_action :set_categories, only: %i[new create]
-
-  # GET /transactions or /transactions.json
-  def index
-    @transactions = Transaction.all
-  end
 
   # GET /transactions/1 or /transactions/1.json
   def show
@@ -14,6 +10,7 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   def new
+    @category = Category.find(params[:category_id])
     @transaction = Transaction.new
     @categorizations = Categorization.all
   end
@@ -25,7 +22,7 @@ class TransactionsController < ApplicationController
     respond_to do |format|
       if @transaction.save
         create_or_update_categorizations(@transaction, transaction_params[:category_ids])
-        format.html { redirect_to transaction_url(@transaction), notice: 'Transaction was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Transaction was successfully created.' }
         format.json { render :show, status: :created, location: @transaction }
       else
         format.html { render :new, status: :unprocessable_entity }

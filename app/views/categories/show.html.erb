@@ -1,6 +1,6 @@
 <%= render 'categories/category_header' %>
 
-<div class="w-screen bg-customGray-100 p-3 pb-20">
+<div class="w-full bg-customGray-100 p-3 pb-20">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
@@ -9,7 +9,7 @@
 </div>
 
 <div class="w-full bg-customGreen text-white flex justify-center items-center">
-  <%= link_to new_transaction_path, class: "bg-customGreen p-5 m-5 border w-full h-full text-center" do %>
+  <%= link_to new_category_transaction_path(@category), class: "bg-customGreen p-5 m-5 border w-full h-full text-center" do %>
     NEW TRANSACTION
   <% end %>
 </div>
