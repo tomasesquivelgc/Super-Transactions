@@ -40,4 +40,9 @@ RSpec.describe User, type: :model do
   it "is validatable" do
     expect(described_class.devise_modules).to include(:validatable)
   end
+
+  it 'has a valid factory' do
+    userBot = create(:user)
+    expect(userBot).to be_valid
+  end
 end

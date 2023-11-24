@@ -16,19 +16,11 @@ RSpec.describe '/transactions', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Transaction. As you add validations to Transaction, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
-  end
-
-  let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
-  end
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Transaction.create! valid_attributes
       get transactions_url
-      expect(response).to be_successful
+      expect(response).to have_http_status(302)
     end
   end
 
