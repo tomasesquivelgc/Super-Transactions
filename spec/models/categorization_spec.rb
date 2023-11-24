@@ -15,6 +15,6 @@ RSpec.describe Categorization, type: :model do
 
   it 'has a factory bot' do
     categorization_bot = create(:categorization)
-    expect(categorization_b).to be_valid
+    expect(categorization_bot).to be_valid
   end
 end
