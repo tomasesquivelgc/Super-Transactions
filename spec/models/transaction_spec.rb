@@ -34,4 +34,9 @@ RSpec.describe Transaction, type: :model do
     expect(association.macro).to eq(:has_many)
     expect(association.options[:through]).to eq(:categorizations)
   end
+
+  it "has a factory bot" do
+    transactionBot = create(:transaction)
+    expect(transactionBot).to be_valid
+  end
 end

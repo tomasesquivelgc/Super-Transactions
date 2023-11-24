@@ -21,4 +21,8 @@ RSpec.describe Category, type: :model do
     expect(association.macro).to eq(:has_many)
   end
 
+  it "has a factory bot" do
+    categoryBot = create(:category)
+    expect(categoryBot).to be_valid
+  end
 end

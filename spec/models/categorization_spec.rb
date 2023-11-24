@@ -12,4 +12,9 @@ RSpec.describe Categorization, type: :model do
     association = described_class.reflect_on_association(:category)
     expect(association.macro).to eq(:belongs_to)
   end
+
+  it "has a factory bot" do
+    categorizationBot = create(:categorization)
+    expect(categorizationBot).to be_valid
+  end
 end
