@@ -36,6 +36,8 @@
 
 **SuperTransactions** is a Ruby on Rails application that allows users to create categories and transactions in an organized manner. This is my Microverse 'Module 5: Ruby on Rails' capstone project
 
+https://www.loom.com/share/c5eec375dc3742ca87e398ab4f3b408f?sid=0d4c4613-3486-4201-a028-da44280e577d
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -75,7 +77,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://google.com)
+- [Live Demo Link]([https://google.com](https://super-transactions.onrender.com))
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
