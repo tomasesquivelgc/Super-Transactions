@@ -36,6 +36,8 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'foreman'
 
+gem 'azure-storage-blob'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
