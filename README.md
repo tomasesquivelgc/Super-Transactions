@@ -77,7 +77,7 @@ https://www.loom.com/share/c5eec375dc3742ca87e398ab4f3b408f?sid=0d4c4613-3486-42
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link]([https://google.com](https://super-transactions.onrender.com))
+- [Live Demo Link](https://super-transactions.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
