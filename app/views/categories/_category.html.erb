@@ -1,0 +1,29 @@
+<div id="<%= dom_id category %>" class="mx-1 my-3 bg-white divide-y" >
+
+  <div class="w-full flex">
+    <%= image_tag category.image, class: "p-5 h-32" %>
+    <p class="p-5">
+      <%= category.name %>
+    </p>
+  </div>
+
+  <div class="w-full flex justify-between">
+  <p class="p-5">TOTAL PAYMENT</p>
+  <p class="p-5 text-customGray-900">$<%= calculate_total_amount(category) %></p>
+  </div>
+
+  <div class="w-full">
+  <% category.categorizations.order(created_at: :desc).each do |categorization| %> 
+    <div class="py-4">
+    <div class="flex justify-between">
+      <p class="px-5">
+        <%= categorization.categorized_transaction.name %>
+      </p>
+      <p class="px-5">$<%= categorization.categorized_transaction.amount %></p>
+    </div>
+    <p class="px-5"><%= categorization.categorized_transaction.created_at.strftime('%d %b %Y') %></p>
+    </div>
+  <% end %>
+  </div>
+
+</div>
