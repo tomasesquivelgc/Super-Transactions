@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe '/categories', type: :request do
   let(:user) { create(:user) }
-  let(:category) { create(:category) }
+  let(:category) { create(:category, :with_faker_image) }
 
   context 'when logged in' do
     before do

@@ -38,7 +38,7 @@
   </div>
 
   <div class="field">
-    <%= form.file_field :image, class: "w-full border-none p-3" %>
+    <%= form.file_field :image, class: "w-full border-none p-3", required: true, accept: "image/*" %>
   </div>
   </div>
 <% end %>
